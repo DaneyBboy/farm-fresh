@@ -102,7 +102,7 @@ export default function Footer() {
                     <SiVisa style={{ fontSize: "40px", color: "#1a1f71" }} />
                     <FaCcMastercard style={{ fontSize: "40px", color: "#1a1f71" }} />
                     <FaCcPaypal style={{ fontSize: "40px", color: "#1a1f71" }} />
-                    <img src={'/public/visa-electron.svg'} alt="Visa Electron" style={{ width: "40px" }} />
+                    <img src={'public/visa-electron.svg'} alt="Visa Electron" style={{ width: "40px" }} />
                 </Box>
             </Box>
         </Box>
