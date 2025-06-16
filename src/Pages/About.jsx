@@ -16,7 +16,7 @@ export default function About() {
         <>
             <div
                 style={{
-                    backgroundImage: `url(../public/farmer.jpg)`,
+                    backgroundImage: `url(/farmer.jpg)`,
                     width: '100%',
                     minHeight: '348px',
                     backgroundSize: 'cover',
@@ -41,7 +41,7 @@ export default function About() {
             <section>
                 <Typography textAlign={'center'} variant="h4" fontWeight={'bold'}>Testimonials</Typography>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '2rem', margin: '4em 0' }}>
-                    <img width={'10%'} src="../public/unsplash_6W4F62sN_yI.png" />
+                    <img width={'10%'} src="/unsplash_6W4F62sN_yI.png" />
                     <div style={{ width: '50%' }}>
                         <FaQuoteLeft />
                         <Typography width={'70%'} fontSize={'1.125rem'} variant="body1">“I never imagined online vegetables could be this fresh. The quality is top-notch, and I love supporting a local-first business!”</Typography>
@@ -49,7 +49,7 @@ export default function About() {
                     </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '2rem', margin: '4em 0' }}>
-                    <img width={'10%'} src="../public/customer1.png" />
+                    <img width={'10%'} src="/customer1.png" />
                     <div style={{ width: '50%' }}>
                         <FaQuoteLeft />
                         <Typography width={'70%'} fontSize={'1.125rem'} variant="body1">“I never imagined online vegetables could be this fresh. The quality is top-notch, and I love supporting a local-first business!”</Typography>
@@ -57,7 +57,7 @@ export default function About() {
                     </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '2rem', margin: '4em 0' }}>
-                    <img width={'10%'} src="/public/customer3.png" />
+                    <img width={'10%'} src="/customer3.png" />
                     <div style={{ width: '50%' }}>
                         <FaQuoteLeft />
                         <Typography width={'70%'} fontSize={'1.125rem'} variant="body1">“I never imagined online vegetables could be this fresh. The quality is top-notch, and I love supporting a local-first business!”</Typography>
