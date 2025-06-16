@@ -2,6 +2,7 @@ import { Box, Container, Grid, Paper, Typography } from "@mui/material"
 import React from "react"
 import { FaQuoteLeft } from "react-icons/fa";
 
+
 export default function About() {
 
     const features = [
@@ -56,7 +57,7 @@ export default function About() {
                     </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: '2rem', margin: '4em 0' }}>
-                    <img width={'10%'} src="../public/customer3.png" />
+                    <img width={'10%'} src="/public/customer3.png" />
                     <div style={{ width: '50%' }}>
                         <FaQuoteLeft />
                         <Typography width={'70%'} fontSize={'1.125rem'} variant="body1">“I never imagined online vegetables could be this fresh. The quality is top-notch, and I love supporting a local-first business!”</Typography>
