@@ -6,6 +6,10 @@ import { Typography } from "@mui/material";
 
 
 export default function header() {
+
+    // const active = {
+
+    // }
     return (
         <>
             <header className="header-flex">

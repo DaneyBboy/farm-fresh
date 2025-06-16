@@ -13,7 +13,7 @@ export default function Contact() {
             <Box sx={{
                 display: 'flex',
                 alignItems: 'anchor-center',
-                backgroundImage: `url('/src/assets/contact.jpg')`,
+                backgroundImage: `url('../public/contact.jpg')`,
                 width: '100%',
                 height: '348px',
                 color: 'white',

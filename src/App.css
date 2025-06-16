@@ -32,7 +32,7 @@ h1{
   font-size: 1.5em;
 }
 .back-image{
-  background: url(src/assets/1167.jpg);
+  background: url(/public/1167.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
