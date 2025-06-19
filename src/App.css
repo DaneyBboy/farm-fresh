@@ -91,7 +91,7 @@ h1{
 .active{
   color: black;
   font-weight: 900;
-  text-decoration: underline rgb(6, 181, 194);
+  text-decoration: 4px underline rgb(6, 181, 194);
   padding: 0 0.3em;
 }
 .unactive{
@@ -100,5 +100,5 @@ h1{
 }
 .unactive:hover{
   color: #5ab10a;
-  text-decoration: underline rgb(6, 181, 194);
+  text-decoration: 3px underline rgb(6, 181, 194);
 }
