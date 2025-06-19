@@ -2,30 +2,28 @@ import React from "react";
 import { VscAccount } from "react-icons/vsc";
 import { FiShoppingBag } from "react-icons/fi";
 import { Link, NavLink } from "react-router";
-import { Typography } from "@mui/material";
+import {  Typography } from "@mui/material";
 
 
 export default function header() {
 
-    // const active = {
-
-    // }
+    
     return (
         <>
             <header className="header-flex">
                 <h1>Farm Fresh</h1>
                 <nav>
                     {/* NavLink makes it easy to show active states */}
-                    <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
-                         <Typography className="nav-header">HOME</Typography>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'active' : "unactive"}>
+                         <Typography >HOME</Typography>
                     </NavLink>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? "active" : "unactive"}>
                          <Typography className="nav-header">ABOUT</Typography>
                     </NavLink>
-                    <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>
+                    <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : "unactive"}>
                          <Typography className="nav-header">CONTACT US</Typography>
                     </NavLink>
-                    <NavLink to="/productlist" className={({ isActive }) => isActive ? "active" : ""}>
+                    <NavLink to="/productlist" className={({ isActive }) => isActive ? "active" : "unactive"}>
                          <Typography className="nav-header">SHOP NOW</Typography>
                     </NavLink>
                 </nav>
