@@ -8,6 +8,7 @@ import Contact from './Pages/Contact'
 import ProductDetail from './Pages/ProductDetail'
 import ProductList from './Components/ProductList'
 import { BrowserRouter, Route, Routes } from 'react-router'
+import Cart from './Pages/Cart'
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/productlist' element={<ProductList />} />
+          <Route path='/productdetails' element={<ProductDetail />} />
+          <Route path='/cart' element={<Cart />} />
            
         </Routes>
         <Footer />

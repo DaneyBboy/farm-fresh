@@ -1,6 +1,7 @@
 import { Box, Breadcrumbs, Button, Container, FormControl, InputLabel, Link, MenuItem, Rating, Select, Typography } from "@mui/material";
 import { useState } from "react";
 import { WiDayThunderstorm } from "react-icons/wi";
+import { NavLink } from "react-router";
 
 export default function ProductDetail() {
     const [quantity, setQuantity] = useState('')
@@ -24,14 +25,12 @@ export default function ProductDetail() {
                 <Container sx={{width:'50%', display:'flex', flexDirection:'column',}}>
                 <div role="presentation" onClick={handleClick}>
                         <Breadcrumbs aria-label="breadcrumb">
-                            <Link underline="hover" color="inherit" href="/">
+                            <NavLink to="/" style={{color:'inherit', textDecoration:'none'}}>
                                 Home
-                            </Link>
-                            <Link
-                                underline="hover" color="inherit" href="/shop"
-                            >
+                            </NavLink>
+                            <NavLink to="/productlist" style={{color:'inherit', textDecoration:'none'}} >
                                 Shop Now
-                            </Link>
+                            </NavLink>
                             <Typography sx={{ color: 'text.primary' }}>Fruits</Typography>
                         </Breadcrumbs>
                     </div>

@@ -1,11 +1,13 @@
 import React from "react";
 import { VscAccount } from "react-icons/vsc";
 import { FiShoppingBag } from "react-icons/fi";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import {  Typography } from "@mui/material";
 
 
 export default function header() {
+
+   
 
     
     return (
@@ -29,7 +31,7 @@ export default function header() {
                 </nav>
                 <div className="icon">
                     <VscAccount className="icon-size" />
-                    <FiShoppingBag className="icon-size" />
+                    <NavLink className={({ isActive }) => isActive ? 'active' : "unactive"}  to='/cart'><FiShoppingBag className="icon-size" /></NavLink>
 
                 </div>
             </header>
