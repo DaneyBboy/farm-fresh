@@ -9,6 +9,7 @@ import ProductDetail from './Pages/ProductDetail'
 import ProductList from './Components/ProductList'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Cart from './Pages/Cart'
+import Ordercheckout from './Pages/Ordercheckout'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/productlist' element={<ProductList />} />
           <Route path='/productdetails' element={<ProductDetail />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Ordercheckout />} />
            
         </Routes>
         <Footer />

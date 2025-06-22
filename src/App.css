@@ -1,4 +1,13 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 header{
 background: linear-gradient(to right, #c3ea93, #b8d7a5);
 border-bottom: 2px solid #5ab10a;
