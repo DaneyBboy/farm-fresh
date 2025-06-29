@@ -42,7 +42,7 @@ export default function ProductDetail() {
 
                 <Container sx={{textAlign:'justify', display:'flex', flexDirection:'column', gap:'1em'}} >
                     <Typography variant="h4" fontWeight={'bold'}>Fresh Kiwi</Typography>
-                    <Rating name="half-rating" defaultValue={4} precision={0.5}></Rating>
+                    <Rating name="half-rating" readOnly defaultValue={4} precision={0.5}></Rating>
                     <Typography variant="h6">$59</Typography>
                     <Typography variant="body1">Kiwis are small fruits that pack a lot of flavor and plenty of health benefits. Their green flesh is sweet and tangy. It’s also full of nutrients like vitamin C, vitamin K, vitamin E, folate, and potassium. They also have a lot of antioxidants and are a good source of fiber.</Typography>
                     <div>

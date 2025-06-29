@@ -10,31 +10,48 @@ import ProductList from './Components/ProductList'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Cart from './Pages/Cart'
 import Ordercheckout from './Pages/Ordercheckout'
+import { ErrorBoundary } from 'react-error-boundary'
+import { Container, Typography } from '@mui/material'
 
 function App() {
+
+  const errorPage = () =>{
+    return(
+      <Container sx={{justifyContent:'center',flexDirection:'column', display:'flex', color:'#021803',width:'100vw',height:'100vh',textAlign:'center', backgroundImage:`url('/public/404Page.png')`, backgroundSize:'cover'}}>
+      <Typography fontSize={'5em'} variant='h3'>Farm Fresh</Typography>
+      <Typography fontSize={'12em'} variant='h1'>404</Typography>
+      <Typography fontSize={'3em'} variant='h5'>Page Not Found</Typography>
+      <Typography fontSize={'2em'} variant='body1'>Sorry for the Breakdown</Typography>
+        </Container>
+
+    )
+  } 
 
 
   return (
     <>
-
-      
       <BrowserRouter>
-      <Header />
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/productlist' element={<ProductList />} />
-          <Route path='/productdetails' element={<ProductDetail />} />
+          <Route path='/productlist' element={
+            <ErrorBoundary FallbackComponent={errorPage}>
+              <ProductList />
+            </ErrorBoundary>} />
+          <Route path='/productdetails' element={
+            <ErrorBoundary>
+              <ProductDetail />
+            </ErrorBoundary>} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/checkout' element={<Ordercheckout />} />
-           
+          <Route path='/checkout' element={
+            <ErrorBoundary>
+              <Ordercheckout />
+            </ErrorBoundary>} />
         </Routes>
         <Footer />
       </BrowserRouter>
-
-     
-
     </>
   )
 }

@@ -10,8 +10,8 @@ export default function ProductList() {
   const producEle = Data.map((data, index) => {
 
     return (
-
-      <Card index={index} sx={{ minWidth: 300, marginBottom: "2em" }}>
+      
+      Data?<Card index={index} sx={{ minWidth: 300, marginBottom: "2em" }}>
         <CardMedia
           sx={{ height: 200 }}
           image={data.url}
@@ -25,7 +25,7 @@ export default function ProductList() {
             $ <span style={{ fontStyle: "italic", fontSize: "1.5em" }}>{data.price}</span> Per Kg
           </Typography>
         </CardContent>
-      </Card>
+      </Card>:new Error("page not found")      
     )
   })
 
@@ -33,7 +33,7 @@ export default function ProductList() {
     <>
       <Box sx={{mx:2, my:5}}>
         <section className="hero">
-          {producEle}
+         {producEle}
         </section>
 
       </Box>
