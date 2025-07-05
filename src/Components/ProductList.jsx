@@ -3,28 +3,34 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Data from '../Data';
-import { Box, Container } from '@mui/material';
+import { Box, Button, Container } from '@mui/material';
+import { useContext } from 'react';
+import { AddtoCart } from '../Context';
+
 
 export default function ProductList() {
 
+const {Cart} =useContext(AddtoCart)
   const producEle = Data.map((data, index) => {
 
     return (
       
-      Data?<Card index={index} sx={{ minWidth: 300, marginBottom: "2em" }}>
+      Data?<Card key={index} sx={{ minWidth: 300, marginBottom: "2em" }}>
         <CardMedia
           sx={{ height: 200 }}
           image={data.url}
           title={data.name}
         />
-        <CardContent sx={{ textAlign: "center" }}>
+        <CardContent sx={{display:'flex', flexDirection:'column', textAlign: "center" }}>
           <Typography gutterBottom variant="h5" component="div">
             {data.name}
           </Typography>
-          <Typography variant="body" sx={{ color: 'info' }}>
+          <Typography  variant="body" sx={{ color: 'info', marginBottom:'1em' }}>
             $ <span style={{ fontStyle: "italic", fontSize: "1.5em" }}>{data.price}</span> Per Kg
           </Typography>
+          <Button onClick={Cart} variant='outlined'>Add to Cart</Button>
         </CardContent>
+        
       </Card>:new Error("page not found")      
     )
   })

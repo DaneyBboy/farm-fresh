@@ -9,7 +9,7 @@ export default function Footer() {
  
 
     return (
-        <Box sx={{ background: "linear-gradient(to right, #c3ea93, #b8d7a5)", mt: 4 }}>
+        <Box sx={{ background: "linear-gradient(to right, #c3ea93, #b8d7a5)", }}>
             {/* Top Section */}
             <Box
                 sx={{

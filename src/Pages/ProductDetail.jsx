@@ -19,16 +19,15 @@ export default function ProductDetail() {
 
     return (
         <>
-            <Box sx={{display:'flex', flexDirection:{xs: "column", sm: "row"}, my:'2.5em', }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: "column", sm: "row" }, my: '2.5em', }}>
 
-
-                <Container sx={{width:'50%', display:'flex', flexDirection:'column',}}>
-                <div role="presentation" onClick={handleClick}>
+                <Container sx={{ width: '50%', display: 'flex', flexDirection: 'column', }}>
+                    <div role="presentation" onClick={handleClick}>
                         <Breadcrumbs aria-label="breadcrumb">
-                            <NavLink to="/" style={{color:'inherit', textDecoration:'none'}}>
+                            <NavLink to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
                                 Home
                             </NavLink>
-                            <NavLink to="/productlist" style={{color:'inherit', textDecoration:'none'}} >
+                            <NavLink to="/productlist" style={{ color: 'inherit', textDecoration: 'none' }} >
                                 Shop Now
                             </NavLink>
                             <Typography sx={{ color: 'text.primary' }}>Fruits</Typography>
@@ -40,13 +39,13 @@ export default function ProductDetail() {
                 </Container>
 
 
-                <Container sx={{textAlign:'justify', display:'flex', flexDirection:'column', gap:'1em'}} >
+                <Container sx={{ textAlign: 'justify', display: 'flex', flexDirection: 'column', gap: '1em' }} >
                     <Typography variant="h4" fontWeight={'bold'}>Fresh Kiwi</Typography>
                     <Rating name="half-rating" readOnly defaultValue={4} precision={0.5}></Rating>
                     <Typography variant="h6">$59</Typography>
                     <Typography variant="body1">Kiwis are small fruits that pack a lot of flavor and plenty of health benefits. Their green flesh is sweet and tangy. It’s also full of nutrients like vitamin C, vitamin K, vitamin E, folate, and potassium. They also have a lot of antioxidants and are a good source of fiber.</Typography>
                     <div>
-                        <FormControl sx={{my:1, minWidth: 100 }}>
+                        <FormControl sx={{ my: 1, minWidth: 100 }}>
                             <InputLabel id="demo-simple-select-autowidth-label">Quantity</InputLabel>
                             <Select
                                 labelId="demo-simple-select-autowidth-label"
@@ -64,7 +63,9 @@ export default function ProductDetail() {
                             </Select>
                         </FormControl>
                     </div>
-                    <Button sx={{px:'1.3em', py:'0.5em', color:'whitesmoke', backgroundColor:"blue",alignSelf: 'flex-start'}}> ADD TO CART</Button>
+                    <Button sx={{ px: '1.3em', py: '0.5em', color: 'whitesmoke', backgroundColor: "blue", alignSelf: 'flex-start' }}>
+                        ADD TO CART
+                    </Button>
 
                 </Container>
             </Box>
