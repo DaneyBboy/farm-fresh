@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div style={{backgroundImage:"url(public/login-image.jpeg)", minHeight:"80vh", display:"flex", flexDirection:'column', justifyContent:'center'}}>
+    <div style={{backgroundImage:`url('/login-image.jpeg')`, minHeight:"80vh", display:"flex", flexDirection:'column', justifyContent:'center'}}>
     <Container maxWidth="sm">
       <Paper elevation={3} sx={{ padding: 4}}>
         <Typography variant="h5" align="center" gutterBottom>
