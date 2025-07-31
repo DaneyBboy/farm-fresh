@@ -1,22 +1,14 @@
 import { Breadcrumbs, Button, Container, Input, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router";
 
 export default function Cart() {
 
-    const [cartData, setCartData] = useState([
-    {
-        id:1,
-        name: "Tomato",
-        price: 5,
-        quantity:1},
-    {   
-        id:2,
-        name:"Potato",
-        price: 10,
-        quantity:1
 
-    }]) 
+    const data = useSelector(state => state.carts.productData)
+
+        const [cartData, setCartData] = useState(data) 
 
     const[subtotal, setSubtotal] = useState(cartData.reduce((acc, item)=>acc+item.price * item.quantity, 0))
 

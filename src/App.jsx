@@ -12,20 +12,29 @@ import Cart from './Pages/Cart'
 import Ordercheckout from './Pages/Ordercheckout'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Container, Typography } from '@mui/material'
-import { AddtoCartProvider } from './Context'
-import { useState } from 'react'
+import { AddtoCart, AddtoCartProvider } from './Context'
 import Login from './Pages/Login'
+import { useContext } from 'react'
+import { Provider } from 'react-redux'
+import store from './Redux/store'
 
 
 
 
 function App() {
-
-const [login , setLogin] = useState(true)
-
   const errorPage = () => {
     return (
-      <Container sx={{ justifyContent: 'center', flexDirection: 'column', display: 'flex', color: '#021803', width: '100vw', height: '100vh', textAlign: 'center', backgroundImage: `url('/public/404Page.png')`, backgroundSize: 'cover' }}>
+      <Container sx={{
+        justifyContent: 'center',
+        flexDirection: 'column',
+        display: 'flex',
+        color: '#021803',
+        width: '100vw',
+        height: '100vh',
+        textAlign: 'center',
+        backgroundImage: `url('/public/404Page.png')`,
+        backgroundSize: 'cover'
+      }}>
         <Typography fontSize={'5em'} variant='h3'>Farm Fresh</Typography>
         <Typography fontSize={'12em'} variant='h1'>404</Typography>
         <Typography fontSize={'3em'} variant='h5'>Page Not Found</Typography>
@@ -34,39 +43,43 @@ const [login , setLogin] = useState(true)
     )
   }
 
-
   return (
-    <>
+    <Provider store={store}>
       <AddtoCartProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/productlist' element={
-              <ErrorBoundary FallbackComponent={errorPage}>
-                <ProductList />
-              </ErrorBoundary>} />
-            <Route path='/productdetails' element={
-              <ErrorBoundary>
-                <ProductDetail />
-              </ErrorBoundary>} />
-            <Route path='/cart' element={<Cart />} />
-
-            <Route path='/checkout' element={
-              <ErrorBoundary FallbackComponent={errorPage}>
-                {login?<Ordercheckout />:<Login/>}
-              </ErrorBoundary>} />
-
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <AppContent errorPage={errorPage} />
       </AddtoCartProvider>
+    </Provider>
 
-    </>
-  )
+  );
 }
 
-export default App
+function AppContent({ errorPage }) {
+  const { login } = useContext(AddtoCart);
 
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/productlist' element={
+          <ErrorBoundary FallbackComponent={errorPage}>
+            <ProductList />
+          </ErrorBoundary>} />
+        <Route path='/productdetails' element={
+          <ErrorBoundary>
+            <ProductDetail />
+          </ErrorBoundary>} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={
+          <ErrorBoundary FallbackComponent={errorPage}>
+            {login ? <Ordercheckout /> : <Login />}
+          </ErrorBoundary>} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+export { App }

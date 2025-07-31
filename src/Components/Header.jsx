@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { VscAccount } from "react-icons/vsc";
 import { FiShoppingBag } from "react-icons/fi";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { Typography } from "@mui/material";
 import Badge from '@mui/material/Badge';
 import { AddtoCart } from "../Context";
+import { useSelector } from "react-redux";
 
 
 
@@ -12,7 +13,17 @@ import { AddtoCart } from "../Context";
 
 export default function Header() {
 
-const {badge} = useContext(AddtoCart)
+    const {logout} = useContext(AddtoCart)
+    const navigate = useNavigate()
+
+    function logginOut(){
+        logout()
+        navigate('/login')
+        window.location.reload();
+    }
+
+const badge = useSelector(state => state.carts.badge)
+
     return (
         <>
             <header className="header-flex">
@@ -33,7 +44,7 @@ const {badge} = useContext(AddtoCart)
                     </NavLink>
                 </nav>
                 <div className="icon">
-                    <VscAccount className="icon-size" />
+                    <VscAccount onClick={logginOut} className="icon-size" />
 
                     <NavLink className={({ isActive }) => isActive ? 'active' : "unactive"} to='/cart'>
                         <Badge badgeContent={badge} color="secondary">
