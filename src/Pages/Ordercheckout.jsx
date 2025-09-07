@@ -55,7 +55,7 @@ export default function Ordercheckout() {
                         </Table >
                     </TableContainer>
                     <Container style={{margin:'1.4em auto',width:'100%', padding:'1.5em 1em', backgroundColor:'#f9f3f3', borderBottom:'3px solid #a8a5a5'}}>Cash on delivery.  Please contact us if you require assistance or wish to make alternate arrangements.</Container>
-                    <Button onClick={handleSubmit} sx={{ display: 'block', marginLeft: 'auto', textAlign: "right", marginTop: '2rem', backgroundColor: 'blue', color: 'whitesmoke', padding: '0.875rem 2.25rem' }}>PLACE ORDER</Button>
+                    <Button onClick={handleSubmit} sx={{ display: 'block', marginLeft: 'auto', textAlign: "right", marginTop: '2rem', marginBottom:'2rem' , backgroundColor: 'blue', color: 'whitesmoke', padding: '0.875rem 2.25rem' }}>PLACE ORDER</Button>
                 </form></>
                 :
 

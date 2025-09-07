@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useContext } from "react";
 import { AddtoCart } from "../Context";
+import { useNavigate } from "react-router";
 
 
 
@@ -22,8 +23,16 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate()
+
   const onSubmit = (data) => {
-    Auth(data)
+    if (data.email === "admin@gmail.com" && data.password === 'admin@123') {
+      Auth()
+      navigate('/cart')
+    } else {
+      alert('Invalid Credentials')
+    }
+
 
   };
 

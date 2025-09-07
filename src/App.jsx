@@ -17,6 +17,7 @@ import Login from './Pages/Login'
 import { useContext } from 'react'
 import { Provider } from 'react-redux'
 import store from './Redux/store'
+import Addproduct from './Pages/Addproduct'
 
 
 
@@ -63,6 +64,7 @@ function AppContent({ errorPage }) {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/addproduct' element={<Addproduct />} />
         <Route path='/productlist' element={
           <ErrorBoundary FallbackComponent={errorPage}>
             <ProductList />

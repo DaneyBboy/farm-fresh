@@ -1,13 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 
 
+
 export const AddtoCart = createContext()
 
 export const AddtoCartProvider = ({ children }) => {
 
 
     const [badge, setBadge] = useState(0)
-      const loginLocal = localStorage.getItem('loggedIn')
+
+    const loginLocal = localStorage.getItem('loggedIn')
+
     const [login, setLogin] = useState(loginLocal)
   
     const [local, setLocal] = useState(loginLocal === 'true'?true:false)
@@ -22,17 +25,12 @@ export const AddtoCartProvider = ({ children }) => {
         setBadge(badge + 1)
     }
 
-    function Auth(data) {
-        if (data.email === "admin@gmail.com" && data.password === 'admin@123') {
+    function Auth() {        
             setLogin(true)
-            setLocal(true)
-        } else {
-            alert('Invalid credentials ')
-        }
+            setLocal(true)            
     }
     function logout(){
-        localStorage.removeItem('loggedIn')
-       
+        localStorage.removeItem('loggedIn')       
     }
 
 
